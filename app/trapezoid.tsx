@@ -1,49 +1,58 @@
 import { View, Text, Button, StyleSheet, TextInput } from "react-native";
 import { useState } from "react";
 import { useRouter } from "expo-router";
-export default function square(){
+export default function trapezoid(){
     // พท.สี่เหลี่ยม = กว้าง * ยาว
     // output = input * input
     //     50 = 5 * 10
-    const [width, setWidth] = useState(0) // width = 20, setWidth(20)
-    const [lenght, setLenght] = useState(0)
+    const [size, setSize] = useState(0) // width = 20, setWidth(20)
+    const [front, setFront] = useState(0)
+    const [high, setHigh] = useState(0)
     const [area, setArea] = useState(0)
+
     const router = useRouter()
+
     function calSquare(){
-        let result = width * lenght
+        
+        let result = (size + front) /2 * high;
         setArea(result)
     }
 
     return(
         <View style={styles.container}>
-            <Text style={styles.mainTitle}>คำนวณพื้นที่สี่เหลี่ยม</Text>
+            <Text style={styles.mainTitle}>คำนวณพื้นที่สี่เหลี่ยมคางหมู</Text>
             {/* <Button title="กลับหน้าแรก" /> */}
 
-            <Text>กว้าง {width} ซม. ยาว {lenght} ซม. พื้นที่ {area} ตร.ซม.</Text>
+            <Text>ขนาด {size} ซม.  พื้นที่ผิว {front} พื้นที่สี่เหลี่ยม = {area} ตร.ซม.</Text>
 
             <TextInput
                 style={styles.textInput} 
                 placeholder="กรอกความกว้าง"
-                value={width.toString()}
-                onChangeText={(w) => setWidth(Number(w))}
+                value={size.toString()}
+                onChangeText={(w) => setSize(Number(w))}
             />
                         
             <TextInput 
-                value={lenght.toString()}
-                onChangeText={(l) => setLenght(Number(l))}
+                value={front.toString()}
+                onChangeText={(l) => setFront(Number(l))}
                 style={styles.textInput}
                 placeholder="กรอกความยาว"/>
-
+            <TextInput 
+                value={high.toString()}
+                onChangeText={(z) => setHigh(Number(z))}
+                style={styles.textInput}
+                placeholder="กรอกความสูง"/>
             <Button title="คำนวณ" onPress={() => calSquare()}/>
-            <Button title="ไปหน้า 2" onPress={() => router.navigate('/trapezoid')}/>
+            <Button title="ไปหน้า 1" onPress={() => router.navigate('/')}/>
         </View>
+        
     )
 }
 
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor:"while",
+        backgroundColor:"white",
         justifyContent:"center",
         alignItems:"center",
         gap: 20

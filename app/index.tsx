@@ -8,7 +8,8 @@ export default function App(){
     return(
         <View style={styles.container}>
             <Text style={styles.mainTitle}>หน้าแรก</Text>
-            <Button title="ไปหน้า 2" onPress={() => router.navigate('/square')}/>
+            <Button title="ไปหน้า 1" onPress={() => router.navigate('/square')}/>
+            <Button title="ไปหน้า 2" onPress={() => router.navigate('/trapezoid')}/>
         </View>
     )
 }
@@ -18,7 +19,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor:"lightsalmon",
         justifyContent:"center",
-        alignItems:"center"
+        alignItems:"center",
+        gap : 15
     },
     mainTitle:{
         fontSize:20,
