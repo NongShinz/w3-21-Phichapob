@@ -35,7 +35,7 @@ export default function square(){
                 placeholder="กรอกความยาว"/>
 
             <Button title="คำนวณ" onPress={() => calSquare()}/>
-            <Button title="ไปหน้า 2" onPress={() => router.navigate('/trapezoid')}/>
+            <Button title="ไปหน้าคำนวณพื้นที่สี่เหลี่ยมคางหมู" onPress={() => router.navigate('/trapezoid')}/>
         </View>
     )
 }
