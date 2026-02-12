@@ -43,8 +43,30 @@ export default function trapezoid(){
                 style={styles.textInput}
                 placeholder="กรอกความสูง"/>
             <Button title="คำนวณ" onPress={() => calSquare()}/>
-            <Button title="ไปหน้า 1" onPress={() => router.navigate('/')}/>
+            <Button title="กลับไปหน้าแรก" onPress={() => router.navigate('/')}/>
         </View>
+        
+    )
+}
+
+const styles = StyleSheet.create({
+    container:{
+        flex: 1,
+        backgroundColor:"white",
+        justifyContent:"center",
+        alignItems:"center",
+        gap: 20
+    },
+    mainTitle:{
+        fontSize:20,
+        fontWeight: "700"
+    },
+    textInput:{
+        borderWidth: 1,
+        width: "80%",
+        borderColor: "green"
+    }
+})
         
     )
 }
